@@ -1,3 +1,5 @@
+from operator import itemgetter
+
 stock_data = [
     ["2014-06-01", "APPL", 100.11],
     ["2014-06-02", "APPL", 110.61],
@@ -26,15 +28,18 @@ def unique_keys(data_list, index):
 #compile the list of stocks into a dictionary with a list of relevant
 #stock information associated with each stock key
 def stock_groups(stock_list, sorting_key, value1, value2):
+    sorted_stock = sorted(stock_list, key=itemgetter(sorting_key))
     stock_dict = {}
     stocks_per_key = []
-    key_list = unique_keys(stock_list, sorting_key)  # get the list of individual stocks
+    key_list = unique_keys(sorted_stock, sorting_key)  # get the list of individual stocks
+    start = 0
     for key in key_list:
-        for i in range(0, len(stock_list)):
-            if stock_list[i][sorting_key] == key:
-                stock_value = [stock_list[i][value1], stock_list[i][value2]]
+        for i in range(start, len(sorted_stock)):
+            if sorted_stock[i][sorting_key] == key:
+                stock_value = [sorted_stock[i][value1], sorted_stock[i][value2]]
                 stocks_per_key.append(stock_value)
         stock_dict[key] = stocks_per_key
+        start += len(stocks_per_key)
         stocks_per_key = []
     return stock_dict
 
@@ -50,5 +55,7 @@ def print_stocks(stock_dict):
 #main program calls
 stocks_by_symbol = stock_groups(stock_data, INDEX_SYMBOL, INDEX_DATE, INDEX_AMOUNT)
 stocks_by_date = stock_groups(stock_data, INDEX_DATE, INDEX_SYMBOL, INDEX_AMOUNT)
+print("Stocks by Ticker:")
 print_stocks(stocks_by_symbol)
+print("stocks by Date:")
 print_stocks(stocks_by_date)
