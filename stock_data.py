@@ -38,6 +38,8 @@ def stock_groups(stock_list, sorting_key, value1, value2):
             if sorted_stock[i][sorting_key] == key:
                 stock_value = [sorted_stock[i][value1], sorted_stock[i][value2]]
                 stocks_per_key.append(stock_value)
+            else:
+                break
         stock_dict[key] = stocks_per_key
         start += len(stocks_per_key)
         stocks_per_key = []
