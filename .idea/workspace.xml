@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88cec67e-2fdf-4ba8-9521-8464fcb43470" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PyPoetry.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyPoetry.py" afterPath="$PROJECT_DIR$/PyPoetry.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/answer_key.txt" afterPath="$PROJECT_DIR$/answer_key.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/python_practice.iml" afterPath="$PROJECT_DIR$/.idea/python_practice.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/riddle_list.txt" afterPath="$PROJECT_DIR$/riddle_list.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing.py" afterPath="$PROJECT_DIR$/testing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/word_list.txt" afterPath="$PROJECT_DIR$/word_list.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="python_practice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -14,7 +26,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python_practice$PyPoetry.coverage" NAME="PyPoetry Coverage Results" MODIFIED="1432151117207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_practice$PyPoetry.coverage" NAME="PyPoetry Coverage Results" MODIFIED="1432187620991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_practice$testing.coverage" NAME="testing Coverage Results" MODIFIED="1432093750788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -42,8 +54,8 @@
       <file leaf-file-name="PyPoetry.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PyPoetry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70987654" vertical-offset="1236" max-vertical-offset="1768">
-              <caret line="93" column="60" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.51028806" vertical-offset="1350" max-vertical-offset="1921">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -417,8 +429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PyPoetry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70987654" vertical-offset="1236" max-vertical-offset="1768">
-          <caret line="93" column="60" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.51028806" vertical-offset="1350" max-vertical-offset="1921">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding />
         </state>
       </provider>

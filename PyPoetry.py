@@ -28,21 +28,26 @@ attended or alone,
 without a tighter breathing,
 and zero at the bone.'''
 
-#assign available letters to unique variable
-unique = set([c for c in poem if c.isalpha()])
-
-#creates mapping with code as key
-code_into_letter = {poem.count(c): c for c in unique}
-
-#creates mapping with letter as key
-letter_into_code = {c: poem.count(c) for c in unique}
-
 #load unix words dictionary into words variable
 with open('c:/cygwin64/usr/share/dict/words') as w:
     words = w.read().splitlines()
 
 
-# given numeric list, solve the riddle
+# pick out all unique, non-zero count letters
+def unique_letters(key_phrase):
+    available_letters = set([c for c in key_phrase if c.isalpha()])
+    letter_counts = [key_phrase.count(c) for c in available_letters]
+    return [c for c in available_letters if letter_counts.count(key_phrase.count(c)) == 1]
+
+
+#creates mapping with code as key
+code_into_letter = {poem.count(c): c for c in unique_letters(poem)}
+
+#creates mapping with letter as key
+letter_into_code = {c: poem.count(c) for c in unique_letters(poem)}
+
+
+# encode (with letter_into_code mapping) or decode (with code_into_letter mapping) the riddle
 def riddle_me_this(riddle, mapping):
     return [mapping[key] for key in riddle]
 
@@ -57,6 +62,7 @@ def coded_riddles(all_words, mapping):
     return [riddle_me_this(word, mapping) for word in all_words]
 
 
+# print list items to file, one item per line
 def print_to_file(file_name, list_to_print):
     fo = open(file_name, "w")
     for item in list_to_print:
@@ -64,6 +70,7 @@ def print_to_file(file_name, list_to_print):
     fo.close()
 
 
+# print dictionary to file, one key/value pair per line
 def print_dict(file_name, dict_to_print):
     fo = open(file_name, "w")
     for key, value in dict_to_print.items():
@@ -71,27 +78,29 @@ def print_dict(file_name, dict_to_print):
     fo.close()
 
 
-def check_decoding(real_words, code, mapping):
-    decode = ''.join(riddle_me_this(code, mapping))
-    if decode in real_words:
-        return decode
-    else:
-        check_decoding(real_words, code, mapping)
+# def check_decoding(real_words, code, mapping):
+#     decode = ''.join(riddle_me_this(code, mapping))
+#     if decode in real_words:
+#         return decode
+#     else:
+#         check_decoding(real_words, code, mapping)
 
 
 # relevant solutions saved to variables
-word_list = riddle_words(words, unique)
+all_letters = unique_letters(poem)
+word_list = riddle_words(words, all_letters)
 riddle_codes = coded_riddles(word_list, letter_into_code)
-answer_key = {word: riddle_me_this(word, letter_into_code) for word in word_list}
+answer_key = {tuple(code): ''.join(riddle_me_this(code, code_into_letter)) for code in riddle_codes}
 longest_word = max(word_list, key=len)
 
 
 #print outputs
-print("Available letters are: {}".format(', '.join(unique)))
+print("Available letters are: {}".format(', '.join(unique_letters(poem))))
 print("Letter mapping is: {}".format(letter_into_code))
 
-print("The answer to the riddle: [56,38,44,56,29] is '{}'".format(check_decoding(word_list, [56, 38, 44, 56, 29], code_into_letter)))
+print("The answer to the riddle: [56,38,44,56,29] is '{}'".format(''.join(riddle_me_this([56, 38, 44, 56, 29], code_into_letter))))
 print("The longest riddle is {}".format(riddle_me_this(longest_word, letter_into_code)))
+
 
 print_to_file("word_list.txt", word_list)
 print_to_file("riddle_list.txt", riddle_codes)
